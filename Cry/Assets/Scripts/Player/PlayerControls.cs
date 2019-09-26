@@ -38,7 +38,7 @@ public class PlayerControls : MonoBehaviour
     {
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        //Jump();
+        Jump();
         TriggerIdle();
         TurnOnWireFrame();
         Sleep();
@@ -47,7 +47,7 @@ public class PlayerControls : MonoBehaviour
 
     void FixedUpdate()
     {
-       // Movement();
+        Movement();
     }
 
 
@@ -87,7 +87,7 @@ public class PlayerControls : MonoBehaviour
                 dir.y = 0;
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.fixedDeltaTime * rotationSpeed);
                 rb.MovePosition(transform.position + dir * velocity * Time.fixedDeltaTime);
-                //animator.SetBool("isRunning", true);
+                animator.SetBool("isRunning", true);
                 stopedMov = false;
             }
             
@@ -108,7 +108,7 @@ public class PlayerControls : MonoBehaviour
             {
                 rb.AddForce(Vector3.up * jumpPower, ForceMode.Impulse);
                 grounded = false;
-                //animator.SetBool("isRunning", true);
+                animator.SetBool("isRunning", true);
                 stopedMov = false;
             }
         }
@@ -131,7 +131,7 @@ public class PlayerControls : MonoBehaviour
             }
             else
             {
-                //animator.SetBool("isRunning", false);
+                animator.SetBool("isRunning", false);
             }
         }
     }
@@ -168,12 +168,12 @@ public class PlayerControls : MonoBehaviour
             if(Time.timeScale!=1)
             {
                 Time.timeScale = 1;
-                //animator.SetBool("isSleeping", false);
+                animator.SetBool("isSleeping", false);
                 
             }
             else
             {
-               // animator.SetBool("isSleeping", true);
+                animator.SetBool("isSleeping", true);
                 StartCoroutine(WaitSleep(7));
             }
         }
@@ -224,7 +224,7 @@ public class PlayerControls : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             grounded = false;
-           // animator.SetBool("isRunning", true);
+            animator.SetBool("isRunning", true);
         }
     }
 
