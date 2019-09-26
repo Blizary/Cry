@@ -17,7 +17,7 @@ MonoBehaviour:
   HasPlatforms: 1
   sourceProjectPath: \\StuHome\HomeDrive4$\1703794\Cry\Cry\Audio\Audio.fspro
   SourceProjectPathUnformatted: \\StuHome\HomeDrive4$\1703794\Cry\Cry\Audio\Audio.fspro
-  SourceBankPathUnformatted: \\StuHome\HomeDrive4$\1703794\Cry\Cry\Audio\Build
+  SourceBankPathUnformatted: Audio\Build
   AutomaticEventLoading: 1
   BankLoadType: 0
   AutomaticSampleLoading: 0
@@ -77,6 +77,7 @@ MonoBehaviour:
   Plugins: []
   MasterBanks:
   - Master
-  Banks: []
+  Banks:
+  - Master.strings
   BanksToLoad: []
   LiveUpdatePort: 9264

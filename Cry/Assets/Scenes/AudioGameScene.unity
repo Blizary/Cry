@@ -25304,7 +25304,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021703917}
-  m_LocalRotation: {x: 0.11155896, y: -0.69270664, z: 0.10976438, w: 0.7040341}
+  m_LocalRotation: {x: 0.11155896, y: -0.6927066, z: 0.10976437, w: 0.70403415}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -29493,7 +29493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Event: event:/AMBIENCE - BACKGROUND
   PlayEvent: 1
-  StopEvent: 2
+  StopEvent: 0
   CollisionTag: 
   AllowFadeout: 1
   TriggerOnce: 0

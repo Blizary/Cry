@@ -1,5 +1,22 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9022561424483015908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Cry\Cry\Audio\Build\Desktop\Master.strings.bank
+  lastModified: 637051287474976889
+  LoadResult: 70
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-8602461845553701152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19,6 +36,48 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1831040
   Exists: 1
+--- !u!114 &-6294721973527998361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCE - BACKGROUND
+  guid: 5bee14bb46910d4f93b805abef90fd79
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 143559
+--- !u!114 &-1729218488370119431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: Audio\Build\Desktop\Master.strings.bank
+  lastModified: 637051287474976889
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 746
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32,17 +91,35 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 7346897957175939811}
-  - {fileID: -8602461845553701152}
+  - {fileID: -1729218488370119431}
+  - {fileID: 4528264257123047241}
+  - {fileID: -9022561424483015908}
   EditorEvents:
-  - {fileID: 5917071197476724146}
+  - {fileID: -6294721973527998361}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -8602461845553701152}
+  - {fileID: 4528264257123047241}
   StringsBanks:
-  - {fileID: 7346897957175939811}
-  stringsBankWriteTime: 637051102345183926
+  - {fileID: -1729218488370119431}
+  stringsBankWriteTime: 637051287474976889
   cacheVersion: 3
+--- !u!114 &4528264257123047241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Cry\Cry\Audio\Build\Desktop\Master.bank
+  lastModified: 637051287474956875
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &5917071197476724146
 MonoBehaviour:
   m_ObjectHideFlags: 0
