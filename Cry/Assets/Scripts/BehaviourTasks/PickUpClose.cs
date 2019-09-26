@@ -8,6 +8,7 @@ public class PickUpClose : Conditional
     /// checks if there is a pick up object close to the animal
     /// </summary>
     private AnimalBase animalBase;
+    public SharedGameObject currentFecth;
 
     public override void OnStart()
     {
@@ -15,8 +16,20 @@ public class PickUpClose : Conditional
     }
     public override TaskStatus OnUpdate()
     {
-        if (animalBase.isFollowing)
+
+        if (animalBase.fetchQuery.GetComponent<FetchQueryStore>().fetchObjs.Count != 0)
         {
+            if (animalBase.moveToLocations.Contains(animalBase.fetchQuery.GetComponent<FetchQueryStore>().fetchObjs[0].transform.position))
+            {
+
+            }
+            else
+            {
+                animalBase.moveToLocations.Clear();
+                currentFecth.Value = animalBase.fetchQuery.GetComponent<FetchQueryStore>().fetchObjs[0];
+                animalBase.moveToLocations.Add(animalBase.fetchQuery.GetComponent<FetchQueryStore>().fetchObjs[0].transform.position);
+            }
+            
             return TaskStatus.Success;
         }
         else

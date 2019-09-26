@@ -198,7 +198,7 @@ public class PlayerControls : MonoBehaviour
                 {
                     for(int i=0;i< animalQuery.GetComponent<AnimalQuery>().bunnyList.Count;i++)
                     {
-                        animalQuery.GetComponent<AnimalQuery>().bunnyList[i].GetComponent<BunnyBehaviour>().Called();
+                        animalQuery.GetComponent<AnimalQuery>().bunnyList[i].GetComponent<AnimalBase>().Called();
                     }
                 }
             }

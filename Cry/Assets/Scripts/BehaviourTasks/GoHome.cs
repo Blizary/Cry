@@ -14,7 +14,16 @@ public class GoHome : Action
 	public override void OnStart()
 	{
         animalBase = GetComponent<AnimalBase>();
-        animalBase.moveToLocations.Add(animalBase.spawnLocation);
+
+        if (animalBase.moveToLocations.Contains(animalBase.spawnLocation))
+        {
+        }
+        else
+        {
+            animalBase.moveToLocations.Clear();
+            animalBase.moveToLocations.Add(animalBase.spawnLocation);
+        }
+        
 
     }
 

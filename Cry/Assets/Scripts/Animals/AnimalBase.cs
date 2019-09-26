@@ -27,7 +27,7 @@ public class AnimalBase : MonoBehaviour
 
     [HideInInspector]
     public Vector3 spawnLocation;//the location where the animal has spawned, home location - defined in code 
-    [HideInInspector]
+    //[HideInInspector]
     public List<Vector3> moveToLocations;//stores the locations where the animal is meant to move to - defined by BT
 
     public bool isFollowing;//true is following the player false otherwise - defined by interactions
@@ -76,6 +76,11 @@ public class AnimalBase : MonoBehaviour
     public void Called()
     {
         isFollowing = !isFollowing;
+    }
+
+    public void SetNavmeshMov(bool newbool)
+    {
+        navAgent.isStopped = newbool;
     }
 
 
