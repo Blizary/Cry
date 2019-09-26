@@ -10943,6 +10943,7 @@ GameObject:
   - component: {fileID: 650783378}
   - component: {fileID: 650783379}
   - component: {fileID: 650783380}
+  - component: {fileID: 650783381}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -10957,7 +10958,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650783373}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &650783375
 Camera:
   m_ObjectHideFlags: 0
@@ -11264,6 +11265,19 @@ MonoBehaviour:
       enableFptlForForwardOpaque: 0
       enableBigTilePrepass: 0
       isFptlEnabled: 0
+--- !u!114 &650783381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650783373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &658868614
 GameObject:
   m_ObjectHideFlags: 3
@@ -25020,6 +25034,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transparentMat: {fileID: 2100000, guid: fad2b9f21a42c7141a5ee742248a888b, type: 2}
+--- !u!1 &1998273289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1998273291}
+  - component: {fileID: 1998273290}
+  m_Layer: 0
+  m_Name: AudioSpotEffect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1998273290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998273289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/SPOT EFFECTS/BIRDS/AMBIENCE - SPOT EFFECT - SPARROWS
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: Untagged
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 10
+--- !u!4 &1998273291
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998273289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.37, y: -6.13, z: 9.812}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2001119822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25304,7 +25372,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021703917}
-  m_LocalRotation: {x: 0.11155896, y: -0.6927066, z: 0.10976437, w: 0.70403415}
+  m_LocalRotation: {x: 0.11155896, y: -0.6927066, z: 0.10976438, w: 0.70403415}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -29473,7 +29541,7 @@ GameObject:
   - component: {fileID: 2133718456}
   - component: {fileID: 2133718455}
   m_Layer: 0
-  m_Name: TestAmbience
+  m_Name: AudioTestAmbience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29491,7 +29559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/AMBIENCE - BACKGROUND
+  Event: event:/BACKGROUND AMBIENCES/AMBIENCE - BACKGROUND
   PlayEvent: 1
   StopEvent: 0
   CollisionTag: 

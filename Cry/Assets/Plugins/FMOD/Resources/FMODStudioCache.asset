@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Cry\Cry\Audio\Build\Desktop\Master.strings.bank
-  lastModified: 637051287474976889
+  lastModified: 637051341499269871
   LoadResult: 70
   FileSizes: []
   Exists: 1
@@ -50,8 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/AMBIENCE - BACKGROUND
   guid: 5bee14bb46910d4f93b805abef90fd79
-  Banks:
-  - {fileID: 4528264257123047241}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -72,12 +71,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Audio\Build\Desktop\Master.strings.bank
-  lastModified: 637051287474976889
+  lastModified: 637051341499269871
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 746
+    Value: 862
   Exists: 1
+--- !u!114 &-324243220666777691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT EFFECTS/BIRDS/AMBIENCE - SPOT EFFECT - SPARROWS
+  guid: 4f7440e48d553f46aab084d14ec6a66c
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 7.4
+  Length: 7680
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,14 +117,38 @@ MonoBehaviour:
   - {fileID: 4528264257123047241}
   - {fileID: -9022561424483015908}
   EditorEvents:
-  - {fileID: -6294721973527998361}
+  - {fileID: 1058330969502995944}
+  - {fileID: -324243220666777691}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4528264257123047241}
   StringsBanks:
   - {fileID: -1729218488370119431}
-  stringsBankWriteTime: 637051287474976889
+  stringsBankWriteTime: 637051341499269871
   cacheVersion: 3
+--- !u!114 &1058330969502995944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/BACKGROUND AMBIENCES/AMBIENCE - BACKGROUND
+  guid: 5bee14bb46910d4f93b805abef90fd79
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 143559
 --- !u!114 &4528264257123047241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Cry\Cry\Audio\Build\Desktop\Master.bank
-  lastModified: 637051287474956875
+  lastModified: 637051341499210045
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -162,3 +208,25 @@ MonoBehaviour:
   - Name: Desktop
     Value: 738
   Exists: 1
+--- !u!114 &7843006568540545056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SPOT EFFECTS/BIRDS/AMBIENCE-SPOTEFFECT_SPARROWS
+  guid: 944b922ff474734ab62ca6a8e16d4de7
+  Banks: []
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 9
+  Length: 7680
