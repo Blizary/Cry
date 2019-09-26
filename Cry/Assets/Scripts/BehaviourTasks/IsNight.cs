@@ -15,7 +15,6 @@ public class IsNight : Conditional
 
     public override TaskStatus OnUpdate()
 	{
-        Debug.Log("time : " + timeOfTheday.timeOfDay);
         if (timeOfTheday.timeOfDay <= 0.3f || timeOfTheday.timeOfDay >= 0.65f)
         {
             return TaskStatus.Failure;
