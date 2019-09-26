@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FMODStudioSettings
   m_EditorClassIdentifier: 
   SwitchSettingsMigration: 1
-  HasSourceProject: 1
+  HasSourceProject: 0
   HasPlatforms: 1
   sourceProjectPath: \\StuHome\HomeDrive4$\1703794\Cry\Cry\Audio\Audio.fspro
   SourceProjectPathUnformatted: \\StuHome\HomeDrive4$\1703794\Cry\Cry\Audio\Audio.fspro
