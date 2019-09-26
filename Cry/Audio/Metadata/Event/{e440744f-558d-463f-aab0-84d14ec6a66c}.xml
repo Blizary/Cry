@@ -56,7 +56,14 @@
 			<destination>{6069c5c1-bdc1-448f-b766-b9d3213fd088}</destination>
 		</relationship>
 	</object>
-	<object class="EventAutomatableProperties" id="{1c3f890a-957e-455a-b317-56704634376c}" />
+	<object class="EventAutomatableProperties" id="{1c3f890a-957e-455a-b317-56704634376c}">
+		<property name="isPersistent">
+			<value>true</value>
+		</property>
+		<property name="dopplerEnabled">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="MarkerTrack" id="{df396443-2c0c-4aa9-b1f7-fd1854bc806b}" />
 	<object class="GroupTrack" id="{f540da44-286d-4a1b-8b10-956b7110c0c9}">
 		<relationship name="modules">
@@ -146,11 +153,14 @@
 		<property name="maximumDistance">
 			<value>10</value>
 		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
 		<property name="soundSize">
-			<value>10000</value>
+			<value>1.80000007</value>
 		</property>
 		<property name="minimumExtent">
-			<value>360</value>
+			<value>2</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{60d13c4c-ff94-4600-8804-1fd95c501bd2}" />

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Cry\Cry\Audio\Build\Desktop\Master.strings.bank
-  lastModified: 637051341499269871
+  lastModified: 637051376363898397
   LoadResult: 70
   FileSizes: []
   Exists: 1
@@ -36,6 +36,29 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1831040
   Exists: 1
+--- !u!114 &-6338246043162037470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AMBIENCES/BACKGROUND AMBIENCES/AMBIENCE - BACKGROUND
+  guid: 5bee14bb46910d4f93b805abef90fd79
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 55
+  Length: 143559
 --- !u!114 &-6294721973527998361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,6 +81,117 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 143559
+--- !u!114 &-5589729230150527088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Day
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
+--- !u!114 &-4359292265493291550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/Day Music
+  guid: 49a23aab88fcd14d860594da47cdae76
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 74400
+--- !u!114 &-3526832299381214504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/BACKGROUND AMBIENCES/AMBIENCE - BACKGROUND
+  guid: 5bee14bb46910d4f93b805abef90fd79
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 55
+  Length: 143559
+--- !u!114 &-2823802991872537826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/Night and Day Music
+  guid: 170550c0fafe834f93b9ab73caa5dd38
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5589729230150527088}
+  - {fileID: 6614160231155027046}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 154400
+--- !u!114 &-1876677078267512478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIC/Night Music
+  guid: 517925c84f6c204ca017c3fd04105fb3
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 74400
 --- !u!114 &-1729218488370119431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,12 +205,58 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Audio\Build\Desktop\Master.strings.bank
-  lastModified: 637051341499269871
+  lastModified: 637051376363898397
   LoadResult: 0
   FileSizes:
   - Name: Desktop
-    Value: 862
+    Value: 1138
   Exists: 1
+--- !u!114 &-1445259277468526618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AMBIENCES/SPOT EFFECTS/BIRDS/AMBIENCE - SPOT EFFECT - SPARROWS
+  guid: 4f7440e48d553f46aab084d14ec6a66c
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 7680
+--- !u!114 &-609424564515919132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: event:/AMBIENCES/SPOT EFFECTS/BIRDS/AMBIENCE - SPOT EFFECT - SPARROWS
+  guid: 4f7440e48d553f46aab084d14ec6a66c
+  Banks:
+  - {fileID: 4528264257123047241}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 10
+  Length: 7680
 --- !u!114 &-324243220666777691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,14 +271,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/SPOT EFFECTS/BIRDS/AMBIENCE - SPOT EFFECT - SPARROWS
   guid: 4f7440e48d553f46aab084d14ec6a66c
-  Banks:
-  - {fileID: 4528264257123047241}
-  IsStream: 0
+  Banks: []
+  IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 7.4
+  MaxDistance: 10
   Length: 7680
 --- !u!114 &11400000
 MonoBehaviour:
@@ -117,14 +296,17 @@ MonoBehaviour:
   - {fileID: 4528264257123047241}
   - {fileID: -9022561424483015908}
   EditorEvents:
-  - {fileID: 1058330969502995944}
-  - {fileID: -324243220666777691}
+  - {fileID: -1445259277468526618}
+  - {fileID: -6338246043162037470}
+  - {fileID: -4359292265493291550}
+  - {fileID: -1876677078267512478}
+  - {fileID: -2823802991872537826}
   EditorParameters: []
   MasterBanks:
   - {fileID: 4528264257123047241}
   StringsBanks:
   - {fileID: -1729218488370119431}
-  stringsBankWriteTime: 637051341499269871
+  stringsBankWriteTime: 637051376363898397
   cacheVersion: 3
 --- !u!114 &1058330969502995944
 MonoBehaviour:
@@ -140,14 +322,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/BACKGROUND AMBIENCES/AMBIENCE - BACKGROUND
   guid: 5bee14bb46910d4f93b805abef90fd79
-  Banks:
-  - {fileID: 4528264257123047241}
+  Banks: []
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 55
   Length: 143559
 --- !u!114 &4528264257123047241
 MonoBehaviour:
@@ -162,7 +343,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: C:\Cry\Cry\Audio\Build\Desktop\Master.bank
-  lastModified: 637051341499210045
+  lastModified: 637051376363838246
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -189,6 +370,23 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 143559
+--- !u!114 &6614160231155027046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Night
+  Min: 0
+  Max: 1
+  Default: 0
+  Exists: 0
 --- !u!114 &7346897957175939811
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="AudioFile" id="{b6776b1c-270c-4164-8af0-f15f470040b6}">
 		<property name="assetPath">
-			<value>AMBIENCE - SPOT EFFECT - SPARROWS.wav</value>
+			<value>SFX/AMBIENCE - SPOT EFFECT - SPARROWS.wav</value>
 		</property>
 		<property name="isStreaming">
 			<value>true</value>

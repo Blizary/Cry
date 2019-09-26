@@ -25063,7 +25063,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/SPOT EFFECTS/BIRDS/AMBIENCE - SPOT EFFECT - SPARROWS
+  Event: event:/SFX/AMBIENCES/SPOT EFFECTS/BIRDS/AMBIENCE - SPOT EFFECT - SPARROWS
   PlayEvent: 1
   StopEvent: 0
   CollisionTag: Untagged
@@ -25071,7 +25071,7 @@ MonoBehaviour:
   TriggerOnce: 0
   Preload: 0
   Params: []
-  OverrideAttenuation: 1
+  OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 10
 --- !u!4 &1998273291
@@ -25082,7 +25082,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998273289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.37, y: -6.13, z: 9.812}
+  m_LocalPosition: {x: -8.315, y: -3.32, z: 16.364}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25372,7 +25372,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021703917}
-  m_LocalRotation: {x: 0.11155896, y: -0.6927066, z: 0.10976438, w: 0.70403415}
+  m_LocalRotation: {x: 0.11155897, y: -0.6927066, z: 0.109764375, w: 0.70403415}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -29559,7 +29559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/BACKGROUND AMBIENCES/AMBIENCE - BACKGROUND
+  Event: event:/SFX/AMBIENCES/BACKGROUND AMBIENCES/AMBIENCE - BACKGROUND
   PlayEvent: 1
   StopEvent: 0
   CollisionTag: 
