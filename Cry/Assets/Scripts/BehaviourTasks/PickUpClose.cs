@@ -2,29 +2,27 @@ using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
-public class IsNight : Conditional
+public class PickUpClose : Conditional
 {
-    private DayNightCycle timeOfTheday;
-   
+    /// <summary>
+    /// checks if there is a pick up object close to the animal
+    /// </summary>
+    private AnimalBase animalBase;
 
     public override void OnStart()
     {
-        timeOfTheday = GameObject.FindGameObjectWithTag("DayNight").GetComponent<DayNightCycle>();
-
+        animalBase = GetComponent<AnimalBase>();
     }
-
     public override TaskStatus OnUpdate()
-	{
-        if (timeOfTheday.timeOfDay <= 0.3f || timeOfTheday.timeOfDay >= 0.65f)
+    {
+        if (animalBase.isFollowing)
         {
             return TaskStatus.Success;
-           
-
         }
         else
         {
             return TaskStatus.Failure;
         }
-       
-	}
+
+    }
 }

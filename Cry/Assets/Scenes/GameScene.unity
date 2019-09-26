@@ -6913,7 +6913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &384852902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11008,8 +11008,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650783373}
-  m_LocalRotation: {x: 0.09873464, y: -0.69458854, z: 0.097146064, w: 0.7059468}
-  m_LocalPosition: {x: 5.259027, y: -4.39, z: 4.63874}
+  m_LocalRotation: {x: 0.098734625, y: -0.6945888, z: 0.09714611, w: 0.7059466}
+  m_LocalPosition: {x: 5.259027, y: -4.39, z: 4.6387444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13298,7 +13298,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &849142055
 Transform:
   m_ObjectHideFlags: 0
@@ -13401,7 +13401,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855184816}
-  m_LocalRotation: {x: 0.085911795, y: -0.69623655, z: 0.08452894, w: 0.70762193}
+  m_LocalRotation: {x: 0.08591176, y: -0.6962368, z: 0.08452895, w: 0.7076217}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18491,7 +18491,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1284237298}
-  m_LocalRotation: {x: 0.098734915, y: -0.6945885, z: 0.0971458, w: 0.7059469}
+  m_LocalRotation: {x: 0.09873488, y: -0.6945887, z: 0.097145855, w: 0.7059466}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -18705,7 +18705,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288631255}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.259027, y: -4.39, z: 4.63874}
+  m_LocalPosition: {x: 5.259027, y: -4.39, z: 4.6387444}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2021703919}
@@ -25304,7 +25304,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2021703917}
-  m_LocalRotation: {x: 0.11155896, y: -0.69270664, z: 0.10976438, w: 0.7040341}
+  m_LocalRotation: {x: 0.11155879, y: -0.6927069, z: 0.109764546, w: 0.70403385}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -31297,6 +31297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c9cbf9d2b78764883acb21350e06b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stuff: it is this bunny alright
   destination: {x: 0, y: 0, z: 0}
   wanderRadius: 5
   arrivingProximity: 1
@@ -31306,6 +31307,8 @@ MonoBehaviour:
   animalType: 2
   animalLVL: 1
   spawnLocation: {x: 0, y: 0, z: 0}
+  moveToLocations: []
+  isFollowing: 0
 --- !u!114 &2922441758686748213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31333,16 +31336,16 @@ MonoBehaviour:
       types: []
       parentIndex: 
       startIndex: 
-      variableStartIndex: 00000000
+      variableStartIndex: 0000000004000000
       JSONSerialization: 
       fieldSerializationData:
         typeName: []
-        fieldNameHash: f9be55564aaa52567707a10414172f4c
-        startIndex: 00000000010000000200000003000000
-        dataPosition: 00000000260000003400000035000000
+        fieldNameHash: f9be55564aaa52567707a10414172f4cf9be55564aaa52567707a104
+        startIndex: 00000000010000000200000003000000040000000500000006000000
+        dataPosition: 00000000260000003400000035000000410000006a00000070000000
         unityObjects: []
-        byteData: 4265686176696f7244657369676e65722e52756e74696d652e536861726564566563746f72334d6f7665546f4c6f636174696f6e01000000000000000000000000
-        byteDataArray: 4265686176696f7244657369676e65722e52756e74696d652e536861726564566563746f72334d6f7665546f4c6f636174696f6e01000000000000000000000000
+        byteData: 4265686176696f7244657369676e65722e52756e74696d652e536861726564566563746f72334d6f7665546f4c6f636174696f6e010000000000000000000000004265686176696f7244657369676e65722e52756e74696d652e53686172656447616d654f626a65637474686973474f01
+        byteDataArray: 4265686176696f7244657369676e65722e52756e74696d652e536861726564566563746f72334d6f7665546f4c6f636174696f6e010000000000000000000000004265686176696f7244657369676e65722e52756e74696d652e53686172656447616d654f626a65637474686973474f01
       Version: 1.6.3
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1

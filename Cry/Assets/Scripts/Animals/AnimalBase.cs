@@ -14,6 +14,7 @@ public enum AnimalType
 
 public class AnimalBase : MonoBehaviour
 {
+    public string stuff;
 
     public Vector3 destination;//destination of the animal - defined in code
     public float wanderRadius;//radius around the animal where he can find random locations to move to - define in hierarchy
@@ -26,22 +27,34 @@ public class AnimalBase : MonoBehaviour
 
     [HideInInspector]
     public Vector3 spawnLocation;//the location where the animal has spawned, home location - defined in code 
+    [HideInInspector]
+    public List<Vector3> moveToLocations;//stores the locations where the animal is meant to move to - defined by BT
+
+    public bool isFollowing;//true is following the player false otherwise - defined by interactions
 
     private Animator animator;
-    NavMeshAgent navAgent;
+    private NavMeshAgent navAgent;
     // Start is called before the first frame update
     void Start()
+    {
+
+    }
+
+
+    public void SetVariables()
     {
         spawnLocation = this.transform.position;
         navAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        moveToLocations = new List<Vector3>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
+
 
 
 
@@ -59,4 +72,12 @@ public class AnimalBase : MonoBehaviour
             navAgent.SetDestination(targetVector);
         }
     }
+
+    public void Called()
+    {
+        isFollowing = !isFollowing;
+    }
+
+
 }
+

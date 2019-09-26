@@ -9,13 +9,12 @@ public class GoHome : Action
     /// </summary>
     /// 
 
-    public SharedVector3 targetPosition;
 
     private AnimalBase animalBase;
 	public override void OnStart()
 	{
         animalBase = GetComponent<AnimalBase>();
-        targetPosition = animalBase.spawnLocation;
+        animalBase.moveToLocations.Add(animalBase.spawnLocation);
 
     }
 
