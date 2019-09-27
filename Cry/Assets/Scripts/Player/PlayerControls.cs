@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using MalbersAnimations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControls : MonoBehaviour
 {
@@ -11,7 +13,20 @@ public class PlayerControls : MonoBehaviour
     public Transform holdingItemLocation;//location where the holding Item will stay
     public bool wireframeVision; //true if on
     public GameObject animalQuery;
+    public PlayerPickUps pickUpsFound;
 
+    [Header("Food/Water/Sleep")]
+    public GameObject fwsUI;
+    public float maxFoodLvl;
+    public float maxWaterLvl;
+    public float maxSleepLvl;
+    public Image foodImage;
+    public Image waterImage;
+    public Image sleepImage;
+    public float foodTrigger;
+    public float waterTrigger;
+    public float sleepTrigger;
+    public float fwsTimer;
 
     private Transform cam;
 
@@ -25,37 +40,92 @@ public class PlayerControls : MonoBehaviour
     private bool isSleeping;
 
 
+    private float foodLvl;
+    private float waterLvl;
+    private float sleepLvl;
+    private float innerfwsTimer;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         cam = Camera.main.transform;
         animator =GetComponent<Animator>();
+        foodLvl = maxFoodLvl;
+        waterLvl = maxWaterLvl;
+        sleepLvl = maxSleepLvl;
+        innerfwsTimer = fwsTimer;
     }
 
     // Update is called once per frame
     void Update()
     {
+        FWSTick();
+        SleepEffects();
+
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-        Jump();
+       // Jump();
         TriggerIdle();
         TurnOnWireFrame();
         Sleep();
+        DebugUiTrigger();
         Cry();
+        EatAndDrink();
+        UpdateBars();
+        
     }
+
+
+    void SleepEffects()
+    {
+       
+        GetComponent<Animal>().runSpeed.animator = Mathf.Lerp(1, 0.3f,1- (sleepLvl / maxSleepLvl));
+    }
+
+
+    void FWSTick()
+    {
+        if(innerfwsTimer>0)
+        {
+            innerfwsTimer -= Time.deltaTime;
+        }
+        else
+        {
+            innerfwsTimer = fwsTimer;
+            foodLvl -= foodTrigger;
+            if(foodLvl<0)
+            {
+                foodLvl = 0;
+            }
+            waterLvl -= waterTrigger;
+            if (waterLvl < 0)
+            {
+                waterLvl = 0;
+            }
+            sleepLvl -= sleepTrigger;
+            if (sleepLvl < 0)
+            {
+                sleepLvl = 0;
+            }
+        }
+    }
+
 
     void FixedUpdate()
     {
-        Movement();
+       // Movement();
     }
 
 
     void TurnOnWireFrame()
     {
-        if(Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             wireframeVision = !wireframeVision;
+            GetComponent<MalbersInput>().canMove = !GetComponent<MalbersInput>().canMove;
         }
     }
 
@@ -160,20 +230,84 @@ public class PlayerControls : MonoBehaviour
     }
 
 
+
+    void EatAndDrink()
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            if (pickUpsFound.food.Count != 0)
+            {
+                GetComponent<Animal>().SetAction(2);
+                GetComponent<Animal>().Loops = 1;
+
+
+                ///CHANGE MEH LATER////////////////////
+                foodLvl += 20;
+                if(foodLvl>100)
+                {
+                    foodLvl = 100;
+                }
+
+
+                //////////////////WARNING CHANGE TO OBJECT POOL LATER///////////////////////////////////////
+                GameObject foodz = pickUpsFound.food[0];
+                pickUpsFound.food.RemoveAt(0);
+                foodz.SetActive(false);
+            }
+            else if (pickUpsFound.closeToWater)
+            {
+                GetComponent<Animal>().SetAction(7);
+
+                waterLvl += 40;
+                if(waterLvl>100)
+                {
+                    waterLvl = 100;
+                }
+
+            }
+        }
+       
+    }
+
+
+    
+
+    void DebugUiTrigger()
+    {
+        if(Input.GetKeyDown(KeyCode.B))
+        {
+            fwsUI.SetActive(!fwsUI.activeInHierarchy);
+        }
+    }
     public void Sleep()
     {
-        //Debug.Log("timescale: " + Time.timeScale);
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(isSleeping)
         {
-            if(Time.timeScale!=1)
+            sleepLvl += Time.deltaTime*5;
+            if(sleepLvl>100)
+            {
+                sleepLvl = 100;
+            }
+        }
+
+        //Debug.Log("timescale: " + Time.timeScale);
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+
+            if (Time.timeScale != 1)
             {
                 Time.timeScale = 1;
-                animator.SetBool("isSleeping", false);
-                
+                GetComponent<MalbersInput>().canMove = true;
+                isSleeping = false;
+                //animator.SetBool("isSleeping", false);
+
             }
             else
             {
-                animator.SetBool("isSleeping", true);
+                GetComponent<Animal>().SetAction(6);
+                GetComponent<MalbersInput>().canMove = false;
+                isSleeping = true;
+                //animator.SetBool("isSleeping", true);
                 StartCoroutine(WaitSleep(7));
             }
         }
@@ -204,6 +338,14 @@ public class PlayerControls : MonoBehaviour
             }
             
         }
+    }
+
+
+    void UpdateBars()
+    {
+        foodImage.fillAmount = foodLvl / maxFoodLvl;
+        waterImage.fillAmount = waterLvl / maxWaterLvl;
+        sleepImage.fillAmount = sleepLvl / maxSleepLvl;
     }
 
 

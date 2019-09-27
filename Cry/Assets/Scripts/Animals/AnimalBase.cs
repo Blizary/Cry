@@ -14,13 +14,12 @@ public enum AnimalType
 
 public class AnimalBase : MonoBehaviour
 {
-    public string stuff;
 
     public Vector3 destination;//destination of the animal - defined in code
     public float wanderRadius;//radius around the animal where he can find random locations to move to - define in hierarchy
     public float arrivingProximity;//When this distance is reached it is concidered that the animal has arrived at its destination - define in hierarchy
     public float followRange;//Above this distance the animal should follow otherwise should wait - define in hierarchy
-    public GameObject fetchQuery;//object that hold the trigger to detect pick up objs - define in hierarchy
+    public FetchQueryStore fetchQuery;//object that hold the trigger to detect pick up objs - define in hierarchy
     public GameObject holdLocation;//position where the animal holds pick up objs - define in hierarchy
     public AnimalType animalType; //the type of the animal - define in hierarchy
     public int animalLVL;//the level of the animal - define in hierarchy
@@ -37,7 +36,7 @@ public class AnimalBase : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        SetVariables();
     }
 
 

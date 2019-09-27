@@ -45,6 +45,8 @@ namespace MalbersAnimations
 
         public string PlayerID = "Player0"; //This is use for Rewired Asset
         #endregion
+
+        public bool canMove = true;
        
         public bool CameraBaseInput
         {
@@ -127,6 +129,15 @@ namespace MalbersAnimations
             SetInput();
         }
 
+        void FixedUpdate()
+        {
+            if(canMove)
+            {
+                CharacterMove();
+            }
+           
+        }
+
         /// <summary>
         /// Send all the Inputs to the Animal
         /// </summary>
@@ -135,7 +146,7 @@ namespace MalbersAnimations
             h = Horizontal.GetAxis;
             v = alwaysForward ? 1 : Vertical.GetAxis;
             //u = UpDown.GetAxis;
-            CharacterMove();
+          
 
             foreach (var item in inputs) { var InputValue = item.GetInput;}             //This will set the Current Input value to the inputs and Invoke the Values
         }

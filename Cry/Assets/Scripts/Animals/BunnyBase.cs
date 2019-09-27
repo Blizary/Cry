@@ -8,6 +8,8 @@ public class BunnyBase : AnimalBase
     void Start()
     {
         SetVariables();
+        SetAnimation("isWalking", true);
+        SetAnimation("isRunning", false);
     }
 
     // Update is called once per frame

@@ -17,17 +17,17 @@ public class PickUpClose : Conditional
     public override TaskStatus OnUpdate()
     {
 
-        if (animalBase.fetchQuery.GetComponent<FetchQueryStore>().fetchObjs.Count != 0)
+        if (animalBase.fetchQuery.fetchObjs.Count != 0)
         {
-            if (animalBase.moveToLocations.Contains(animalBase.fetchQuery.GetComponent<FetchQueryStore>().fetchObjs[0].transform.position))
+            if (animalBase.moveToLocations.Contains(animalBase.fetchQuery.fetchObjs[0].transform.position))
             {
 
             }
             else
             {
                 animalBase.moveToLocations.Clear();
-                currentFecth.Value = animalBase.fetchQuery.GetComponent<FetchQueryStore>().fetchObjs[0];
-                animalBase.moveToLocations.Add(animalBase.fetchQuery.GetComponent<FetchQueryStore>().fetchObjs[0].transform.position);
+                currentFecth.Value = animalBase.fetchQuery.fetchObjs[0];
+                animalBase.moveToLocations.Add(animalBase.fetchQuery.fetchObjs[0].transform.position);
             }
             
             return TaskStatus.Success;

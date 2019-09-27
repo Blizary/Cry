@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 33000012190344704}
   - component: {fileID: 23000011052729196}
   - component: {fileID: 65000011414292626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: terrain-world-water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,7 +88,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1000012761362750}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 20.000002, y: 3.4983883, z: 20.000011}
