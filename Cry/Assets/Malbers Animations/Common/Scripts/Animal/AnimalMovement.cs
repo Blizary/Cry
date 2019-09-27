@@ -204,7 +204,7 @@ namespace MalbersAnimations
         {
             MovementReleased = (move.x == 0 && move.z == 0);
             directionalMovement = active;                                //Store if the animal is using a direction Vector for movement         
-            float deltaTime = Time.deltaTime;
+            float deltaTime = Time.fixedDeltaTime;
             RawDirection = move.normalized;
 
             if (LockUp && move.y > 0) move.y = 0;

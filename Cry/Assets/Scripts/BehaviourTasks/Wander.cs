@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public class Wander : Action
 {
-    public SharedVector3 targetPosition;
 
     private AnimalBase animalBase;
     public override void OnStart()
@@ -16,17 +15,26 @@ public class Wander : Action
 	public override TaskStatus OnUpdate()
 	{
         
-        Vector3 randomPoint = transform.position + Random.insideUnitSphere * animalBase.wanderRadius;
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+        //there are no other paths to move to
+        if(animalBase.moveToLocations.Count==0)
         {
-            targetPosition = hit.position;
-            return TaskStatus.Success;
+            Vector3 randomPoint = transform.position + Random.insideUnitSphere * animalBase.wanderRadius;
+            NavMeshHit hit;
+            if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+            {
+                animalBase.moveToLocations.Add(randomPoint);
+                return TaskStatus.Success;
+            }
+            else
+            {
+                return TaskStatus.Failure;
+            }
         }
         else
         {
-            return TaskStatus.Failure;
+            return TaskStatus.Success;
         }
+        
        
 	}
 }

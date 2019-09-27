@@ -5,6 +5,7 @@ using UnityEngine;
 public class FetchQueryStore : MonoBehaviour
 {
     public List<GameObject> fetchObjs;
+    public List<GameObject> predators;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,14 +20,26 @@ public class FetchQueryStore : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("PickUp"))
+        if (other.gameObject.CompareTag("PickUp"))
         {
-            if(!fetchObjs.Contains(other.gameObject))
+            if (!fetchObjs.Contains(other.gameObject))
             {
                 fetchObjs.Add(other.gameObject);
             }
-            
-            
+
+
+        }
+        else if (other.gameObject.CompareTag("Animal"))
+        {
+            if (other.gameObject.GetComponent<AnimalBase>().animalType == AnimalType.Predator)
+            {
+                if (!fetchObjs.Contains(other.gameObject))
+                {
+                    predators.Add(other.gameObject);
+                }
+            }
+
+
         }
     }
 
@@ -38,6 +51,15 @@ public class FetchQueryStore : MonoBehaviour
             fetchObjs.Remove(other.gameObject);
 
         }
-       
+        else if (other.gameObject.CompareTag("Animal"))
+        {
+            if (other.gameObject.GetComponent<AnimalBase>().animalType == AnimalType.Predator)
+            {
+                predators.Remove(other.gameObject);
+            }
+
+
+        }
+
     }
 }

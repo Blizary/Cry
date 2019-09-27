@@ -17,13 +17,13 @@ public class IsNight : Conditional
 	{
         if (timeOfTheday.timeOfDay <= 0.3f || timeOfTheday.timeOfDay >= 0.65f)
         {
-            return TaskStatus.Failure;
+            return TaskStatus.Success;
            
 
         }
         else
         {
-            return TaskStatus.Success;
+            return TaskStatus.Failure;
         }
        
 	}
