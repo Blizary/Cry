@@ -7,7 +7,9 @@ public class BunnyBase : AnimalBase
     // Start is called before the first frame update
     void Start()
     {
-        
+        SetVariables();
+        SetAnimation("isWalking", true);
+        SetAnimation("isRunning", false);
     }
 
     // Update is called once per frame
@@ -15,4 +17,6 @@ public class BunnyBase : AnimalBase
     {
         
     }
+
+
 }
