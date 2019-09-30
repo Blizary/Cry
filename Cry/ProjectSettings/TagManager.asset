@@ -12,6 +12,7 @@ TagManager:
   - Water
   - Animal
   - Food
+  - WorldManager
   layers:
   - Default
   - TransparentFX

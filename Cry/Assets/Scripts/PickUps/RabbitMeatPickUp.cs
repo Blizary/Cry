@@ -2,32 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BunnyBase : AnimalBase
+public class RabbitMeatPickUp : PickUpBase
 {
     // Start is called before the first frame update
     void Start()
     {
         SetVariables();
-        SetAnimation("isWalking", true);
-        SetAnimation("isRunning", false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        CheckLife();
+        
     }
 
     public override void OnDeath()
     {
-        //spawn meat
+        poolmanager.rabbitMeatPickUpObjPool.ReturnToPool(this.gameObject);
     }
-
-    public override void OnDamageTaken(float damage)
-    {
-        base.OnDamageTaken(damage);
-
-    }
-
-
 }

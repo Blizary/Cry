@@ -75,7 +75,9 @@ public class PlayerControls : MonoBehaviour
         Cry();
         EatAndDrink();
         UpdateBars();
-        
+        Attack();
+
+
     }
 
 
@@ -206,27 +208,12 @@ public class PlayerControls : MonoBehaviour
         }
     }
 
-
-    void PickUpObject(GameObject newPickUp)
+    void Attack()
     {
-        //was holding an item already
-        if (holdingItem != null)
+        if (Input.GetMouseButtonDown(0))
         {
-            //let go of the item
-            holdingItem.transform.parent = null;
-           
-
+            GetComponent<Animal>().SetAttack(3);
         }
-
-        //reset its parent
-        newPickUp.transform.parent = null;
-        //set new location
-        newPickUp.transform.position = holdingItemLocation.position;
-        //set player as parent
-        newPickUp.transform.parent = gameObject.transform;
-        //pick up an item
-        holdingItem = newPickUp;
-
     }
 
 
@@ -241,18 +228,13 @@ public class PlayerControls : MonoBehaviour
                 GetComponent<Animal>().Loops = 1;
 
 
-                ///CHANGE MEH LATER////////////////////
-                foodLvl += 20;
+                foodLvl += pickUpsFound.food[0].GetComponent<PickUpBase>().pickUpAmount;
                 if(foodLvl>100)
                 {
                     foodLvl = 100;
                 }
 
-
-                //////////////////WARNING CHANGE TO OBJECT POOL LATER///////////////////////////////////////
-                GameObject foodz = pickUpsFound.food[0];
-                pickUpsFound.food.RemoveAt(0);
-                foodz.SetActive(false);
+                pickUpsFound.food[0].GetComponent<PickUpBase>().OnDeath();
             }
             else if (pickUpsFound.closeToWater)
             {
