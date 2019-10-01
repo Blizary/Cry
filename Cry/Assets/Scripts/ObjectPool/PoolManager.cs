@@ -6,12 +6,8 @@ public class PoolManager : MonoBehaviour
 {
 
     public ObjectPooL<RabbitMeatPickUObjPool> rabbitMeatPickUpObjPool;
-    /*
-     * 
-     * 
-     * worldManager.objManager.GetComponent<PoolManager>().arcaneFlareGenerator.ReturnToPool(this.gameObject);
-     *       GameObject bullet = worldManager.objManager.GetComponent<PoolManager>().arcaneFlareGenerator.GetNext();
-*/
+    public ObjectPooL<RabbitObjPool> rabbitObjPool;
+
 
 
     // Use this for initialization
@@ -19,7 +15,7 @@ public class PoolManager : MonoBehaviour
     {
 
         rabbitMeatPickUpObjPool = CreatePool<RabbitMeatPickUObjPool>();
-
+        rabbitObjPool = CreatePool<RabbitObjPool>();
 
         //DONT FORGET TO ADD NEW ONES TO REFILL
 
@@ -32,7 +28,8 @@ public class PoolManager : MonoBehaviour
         newPool.Start();
         newPool.initialSize = this.GetComponent<T>().initialSize;
         newPool.curObj = this.GetComponent<T>().prefab;
-        FillList(newPool.curObj, newPool.pool, newPool.initialSize);
+        newPool.parentobj = this.GetComponent<T>().parentObj;
+        FillList(newPool.curObj, newPool.pool, newPool.initialSize,newPool.parentobj);
         return newPool;
     }
 
@@ -51,7 +48,8 @@ public class PoolManager : MonoBehaviour
     void Refill()
     {
 
-        FillList(rabbitMeatPickUpObjPool.curObj, rabbitMeatPickUpObjPool.pool, rabbitMeatPickUpObjPool.initialSize);
+        FillList(rabbitMeatPickUpObjPool.curObj, rabbitMeatPickUpObjPool.pool, rabbitMeatPickUpObjPool.initialSize,rabbitMeatPickUpObjPool.parentobj);
+        FillList(rabbitObjPool.curObj, rabbitObjPool.pool, rabbitObjPool.initialSize, rabbitObjPool.parentobj);
 
     }
 
@@ -59,11 +57,11 @@ public class PoolManager : MonoBehaviour
 
 
 
-    public void FillList(GameObject curObj, List<GameObject> pool, int initialSize)
+    public void FillList(GameObject curObj, List<GameObject> pool, int initialSize,GameObject parentobj)
     {
         for (int i = 0; i < initialSize; i++)
         {
-            GameObject objCreate = Instantiate(curObj, transform);
+            GameObject objCreate = Instantiate(curObj, parentobj.transform);
             pool.Add(objCreate);
             objCreate.SetActive(false);
         }

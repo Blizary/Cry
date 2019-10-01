@@ -5,8 +5,8 @@ using UnityEngine;
 public class Pools : MonoBehaviour 
 {
 	public GameObject prefab;
-	public int initialSize;
-
+    public int initialSize;
+    public GameObject parentObj;
     public Pools()
     {
 

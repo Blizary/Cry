@@ -47,5 +47,13 @@ public class PickUpBase : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// Function to be called everytime the obj is retrieved from the objpool
+    /// </summary>
+    public virtual void OnSpawn()
+    {
+
+    }
+
 
 }
