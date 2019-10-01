@@ -973,7 +973,6 @@ GameObject:
   - component: {fileID: 8709234191002646821}
   - component: {fileID: 6855555939525730117}
   - component: {fileID: 4557697111869556801}
-  - component: {fileID: 4933164580070384140}
   - component: {fileID: 2922441758686748212}
   - component: {fileID: 2922441758686748213}
   m_Layer: 0
@@ -1032,7 +1031,7 @@ NavMeshAgent:
   m_Speed: 1
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 200
+  m_AngularSpeed: 360
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -1055,7 +1054,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &8709234191002646821
 SphereCollider:
@@ -1096,29 +1095,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4933164580070384140
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2921399530694449829}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7802d120e66f1d847ae8e463ecea5ed7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destination: {x: 0, y: 0, z: 0}
-  wanderRadius: 5
-  arrivingProximity: 1
-  followRange: 2
-  fetchQuery: {fileID: 1425122151842872179}
-  holdLocation: {fileID: 2893542508493111118}
-  currentState: 0
-  isFollowing: 0
-  hasFetch: 0
-  isSleeping: 0
-  idleTimer: 0
 --- !u!114 &2922441758686748212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,18 +1107,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28c9cbf9d2b78764883acb21350e06b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stuff: it is this bunny alright
-  destination: {x: 0, y: 0, z: 0}
-  wanderRadius: 5
-  arrivingProximity: 1.5
-  followRange: 2
-  fetchQuery: {fileID: 7444710537300748523}
-  holdLocation: {fileID: 2893542508493111118}
   animalType: 2
   animalLVL: 1
+  health: 100
+  invunerabilityDuration: 0.2
+  currentHealth: 0
+  fetchQuery: {fileID: 7444710537300748523}
+  holdLocation: {fileID: 2893542508493111118}
+  wanderRadius: 5
+  arrivingProximity: 1.5
+  waitingPercent: 60
+  followRange: 2
+  wanderRadiusPanic: 4
+  speedPanic: 3
+  panicTimer: 10
+  destination: {x: 0, y: 0, z: 0}
   spawnLocation: {x: 0, y: 0, z: 0}
   moveToLocations: []
   isFollowing: 0
+  waiting: 0
 --- !u!114 &2922441758686748213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1170,16 +1153,16 @@ MonoBehaviour:
       types: []
       parentIndex: 
       startIndex: 
-      variableStartIndex: 0000000004000000
+      variableStartIndex: 000000000400000007000000
       JSONSerialization: 
       fieldSerializationData:
         typeName: []
-        fieldNameHash: f9be55564aaa52567707a10414172f4cf9be55564aaa52567707a104
-        startIndex: 00000000010000000200000003000000040000000500000006000000
-        dataPosition: 00000000260000003400000035000000410000006a00000076000000
+        fieldNameHash: f9be55564aaa52567707a10414172f4cf9be55564aaa52567707a104f9be55564aaa52567707a1041af3e5d3
+        startIndex: 000000000100000002000000030000000400000005000000060000000700000008000000090000000a000000
+        dataPosition: 00000000260000003400000035000000410000006a00000076000000770000009b000000a4000000a5000000
         unityObjects: []
-        byteData: 4265686176696f7244657369676e65722e52756e74696d652e536861726564566563746f72334d6f7665546f4c6f636174696f6e010000000000000000000000004265686176696f7244657369676e65722e52756e74696d652e53686172656447616d654f626a65637463757272656e74466563746801
-        byteDataArray: 4265686176696f7244657369676e65722e52756e74696d652e536861726564566563746f72334d6f7665546f4c6f636174696f6e010000000000000000000000004265686176696f7244657369676e65722e52756e74696d652e53686172656447616d654f626a65637463757272656e74466563746801
+        byteData: 4265686176696f7244657369676e65722e52756e74696d652e536861726564566563746f72334d6f7665546f4c6f636174696f6e010000000000000000000000004265686176696f7244657369676e65722e52756e74696d652e53686172656447616d654f626a65637463757272656e744665637468014265686176696f7244657369676e65722e52756e74696d652e536861726564466c6f61747761697454696d65720100000000
+        byteDataArray: 4265686176696f7244657369676e65722e52756e74696d652e536861726564566563746f72334d6f7665546f4c6f636174696f6e010000000000000000000000004265686176696f7244657369676e65722e52756e74696d652e53686172656447616d654f626a65637463757272656e744665637468014265686176696f7244657369676e65722e52756e74696d652e536861726564466c6f61747761697454696d65720100000000
       Version: 1.6.3
   gizmoViewMode: 2
   showBehaviorDesignerGizmo: 1

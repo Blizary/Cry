@@ -12,6 +12,8 @@ TagManager:
   - Water
   - Animal
   - Food
+  - WorldManager
+  - Spawner
   layers:
   - Default
   - TransparentFX

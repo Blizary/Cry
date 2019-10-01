@@ -11,7 +11,7 @@ namespace MalbersAnimations
     {
         public int index = 1;
         public float damageMultiplier = 1;
-        public float PushForce = 0;
+        public float PushForce = 2;
 
         private Animal myAnimal;
         private IMDamagable enemy;
@@ -54,7 +54,7 @@ namespace MalbersAnimations
         void OnTriggerEnter(Collider other)
         {
             if (other.isTrigger) return;                                                //just collapse when is a collider what we are hitting
-            enemy = other.GetComponentInParent<IMDamagable>();                          //Get the Animal on the Other collider
+            enemy = other.GetComponentInParent<IMDamagable>();                          //Get the Animal on the Other collider         
 
             if (enemy != null) //if the other does'nt have the animal script skip
             {
@@ -73,8 +73,17 @@ namespace MalbersAnimations
             {
                 if (other.attachedRigidbody && PushForce != 0)        //If the other has a riggid body and it can be pushed
                 {
+                   // Debug.Log("hit something with a rigidbody");
                     other.attachedRigidbody.AddForce((other.transform.position- transform.position).normalized * PushForce, ForceMode.VelocityChange);
                 }
+            }
+
+            if(other.GetComponent<AnimalBase>())
+            {
+                Debug.Log("hit something with a rigidbody");
+                other.attachedRigidbody.AddForce((other.transform.position - transform.position).normalized * 200);//not doing anything
+
+                other.GetComponent<AnimalBase>().TakeDamage(GameObject.FindGameObjectWithTag("Player").GetComponent<Animal>().attackStrength);
             }
         }
 
