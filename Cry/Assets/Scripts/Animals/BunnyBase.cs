@@ -42,13 +42,22 @@ public class BunnyBase : AnimalBase
         base.OnDamageTaken(_damage);
 
         Debug.Log("took " + _damage + " damage");
-        StartCoroutine(Panicking());
+        StartPanicking();
+        WarnOtherBunnies();
 
     }
 
     protected override void ResetVariables()
     {
         base.ResetVariables();
+    }
+
+    void WarnOtherBunnies()
+    {
+        for (int i = 0; i < preyAnimals.Count; i++)
+        {
+            preyAnimals[i].GetComponent<AnimalBase>().StartPanicking();
+        }
     }
 
 

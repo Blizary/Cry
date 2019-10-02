@@ -63,14 +63,15 @@ public class AnimalBase : MonoBehaviour
     private int defaultWaitingPercent;
 
 
-    protected bool canBeHit =true; // true if it can take damage false otherwise - changes on hit works with the invunerability duration
 
-    
+    protected bool canBeHit = true; // true if it can take damage false otherwise - changes on hit works with the invunerability duration
+    public List<GameObject> preyAnimals;
+
     // Start is called before the first frame update
     void Start()
     {
         Debug.LogError("Wrong class added to object. Add specific class instead of the animal base class");
-        
+
     }
 
 
@@ -86,6 +87,8 @@ public class AnimalBase : MonoBehaviour
         defaultSpeed = GetComponent<NavMeshAgent>().speed;
         defaulwanderRadius = wanderRadius;
         defaultWaitingPercent = waitingPercent;
+        preyAnimals = new List<GameObject>();
+        InvokeRepeating("CheckCloseByAnimals", 2, 5);
 
     }
 
@@ -126,7 +129,7 @@ public class AnimalBase : MonoBehaviour
 
     public void CheckLife()
     {
-        if(currentHealth<=0)
+        if (currentHealth <= 0)
         {
             OnDeath();
         }
@@ -148,11 +151,11 @@ public class AnimalBase : MonoBehaviour
     /// <param name="_damage"></param>
     public void TakeDamage(float _damage)
     {
-        if(canBeHit)
+        if (canBeHit)
         {
             StartCoroutine(IEInvunerabilityTimer(invunerabilityDuration, _damage));
         }
-        
+
     }
 
 
@@ -160,8 +163,8 @@ public class AnimalBase : MonoBehaviour
     {
         currentHealth -= _damage;
     }
-    
-    IEnumerator IEInvunerabilityTimer(float _invunerabilityDuration,float _damage)
+
+    IEnumerator IEInvunerabilityTimer(float _invunerabilityDuration, float _damage)
     {
         canBeHit = false;
         OnDamageTaken(_damage);
@@ -179,7 +182,13 @@ public class AnimalBase : MonoBehaviour
         waitingPercent = defaultWaitingPercent;
     }
 
-    public IEnumerator Panicking()
+
+    public void StartPanicking()
+    {
+        StartCoroutine(Panicking());
+    }
+
+    IEnumerator Panicking()
     {
         GetComponent<NavMeshAgent>().speed = speedPanic;
         wanderRadius = wanderRadiusPanic;
@@ -192,6 +201,22 @@ public class AnimalBase : MonoBehaviour
         wanderRadius = defaulwanderRadius;
         waitingPercent = defaultWaitingPercent;
         Debug.Log("End panic");
+    }
+
+    public void CheckCloseByAnimals()
+    {
+        //ADD LAYER MASK LATER PLS
+        Collider[] hitColliders = Physics.OverlapSphere(this.transform.position, 4);//4 is radius , 10 is the layer mask named "AnimalPersonal"
+        for(int i = 0; i<hitColliders.Length;i++)
+        {
+            if(!preyAnimals.Contains(hitColliders[i].gameObject))
+            {
+                if(hitColliders[i].gameObject.GetComponent<AnimalBase>() && hitColliders[i].gameObject.GetComponent<AnimalBase>().animalType== AnimalType.Prey)
+                {
+                    preyAnimals.Add(hitColliders[i].gameObject);
+                }
+            }
+        }
     }
 }
 

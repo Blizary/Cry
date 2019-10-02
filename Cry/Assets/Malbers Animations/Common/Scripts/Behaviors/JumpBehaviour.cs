@@ -287,7 +287,8 @@ namespace MalbersAnimations
             var PlanarRawDirection = animal.RawDirection;
             PlanarRawDirection.y = 0;
 
-            animal.AirControlDir = Vector3.Lerp(animal.AirControlDir, PlanarRawDirection * ForwardMultiplier, deltaTime * animal.airSmoothness);
+            Debug.Log("input direction " + PlanarRawDirection * ForwardMultiplier);
+            animal.AirControlDir = Vector3.Lerp(animal.AirControlDir, PlanarRawDirection , deltaTime * animal.airSmoothness);
 
             Debug.DrawRay(transform.position, transform.TransformDirection(animal.AirControlDir), Color.yellow);
 

@@ -975,7 +975,7 @@ GameObject:
   - component: {fileID: 4557697111869556801}
   - component: {fileID: 2922441758686748212}
   - component: {fileID: 2922441758686748213}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Rabbit
   m_TagString: Bunny
   m_Icon: {fileID: 0}

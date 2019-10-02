@@ -212,7 +212,7 @@ public class PlayerControls : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            GetComponent<Animal>().SetAttack(3);
+            GetComponent<Animal>().SetAttack(4);
         }
     }
 
