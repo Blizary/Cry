@@ -8,6 +8,9 @@ public class PoolManager : MonoBehaviour
     public ObjectPooL<RabbitMeatPickUObjPool> rabbitMeatPickUpObjPool;
     public ObjectPooL<RabbitObjPool> rabbitObjPool;
 
+    public ObjectPooL<BerryPickUpObjPool> berryPickUpObjPool;
+    public ObjectPooL<BerryobjPool> berryObjPool;
+
 
 
     // Use this for initialization
@@ -16,6 +19,9 @@ public class PoolManager : MonoBehaviour
 
         rabbitMeatPickUpObjPool = CreatePool<RabbitMeatPickUObjPool>();
         rabbitObjPool = CreatePool<RabbitObjPool>();
+
+        berryPickUpObjPool = CreatePool<BerryPickUpObjPool>();
+        berryObjPool = CreatePool<BerryobjPool>();
 
         //DONT FORGET TO ADD NEW ONES TO REFILL
 
@@ -50,6 +56,9 @@ public class PoolManager : MonoBehaviour
 
         FillList(rabbitMeatPickUpObjPool.curObj, rabbitMeatPickUpObjPool.pool, rabbitMeatPickUpObjPool.initialSize,rabbitMeatPickUpObjPool.parentobj);
         FillList(rabbitObjPool.curObj, rabbitObjPool.pool, rabbitObjPool.initialSize, rabbitObjPool.parentobj);
+
+        FillList(berryPickUpObjPool.curObj, berryPickUpObjPool.pool, berryPickUpObjPool.initialSize, berryPickUpObjPool.parentobj);
+        FillList(berryObjPool.curObj, berryObjPool.pool, berryObjPool.initialSize, berryObjPool.parentobj);
 
     }
 

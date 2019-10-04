@@ -7,6 +7,8 @@ public class PlayerPickUps : MonoBehaviour
     public List<GameObject> food;
     public bool closeToWater;
 
+    private berrybush BerryBushObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,10 +36,26 @@ public class PlayerPickUps : MonoBehaviour
             closeToWater = true;
         }
 
+        if (other.gameObject.CompareTag("BerryBush"))
+        {
+            if (!food.Contains(other.gameObject))
+            {
+                food.Add(other.gameObject);
+                BerryBushObject.CollectedBerrys(true);
+            }
+        }
+
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Food"))
+        {
+            if (food.Contains(other.gameObject))
+            {
+                food.Remove(other.gameObject);
+            }
+        }
+        if (other.gameObject.CompareTag("BerryBush"))
         {
             if (food.Contains(other.gameObject))
             {
