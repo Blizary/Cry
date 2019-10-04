@@ -46,6 +46,10 @@ public class PlayerControls : MonoBehaviour
     private float innerfwsTimer;
 
 
+    //Pushing and Pulling objects --- Testing
+    public bool Holding = false;
+
+
 
     // Start is called before the first frame update
     void Start()
