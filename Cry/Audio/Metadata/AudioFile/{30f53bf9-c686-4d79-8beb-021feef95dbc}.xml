@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{30f53bf9-c686-4d79-8beb-021feef95dbc}">
+		<property name="assetPath">
+			<value>DIALOGUES/CAT/CAT_MINI MEOW_CUTE_02.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.12333333333333334</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{da9c469f-6b72-41c2-ae89-b20613f40fd3}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{aae375ad-0a74-4021-b0f7-cf12141cb12a}">
+		<property name="assetPath">
+			<value>DIALOGUES/CAT/CAT_MEOW_A BIT DISTRESSED_09.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.76766439909297057</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{da9c469f-6b72-41c2-ae89-b20613f40fd3}</destination>
+		</relationship>
+	</object>
+</objects>
