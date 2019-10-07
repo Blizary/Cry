@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WorldManager : MonoBehaviour
 {
@@ -15,5 +16,17 @@ public class WorldManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+
+
+    public void NextSceneGameScene()
+    {
+        SceneManager.LoadScene("GameScene");
+    }
+
+    public void NextScenePlayground()
+    {
+        SceneManager.LoadScene("PlaygroundScene");
     }
 }

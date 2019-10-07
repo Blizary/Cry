@@ -1025,7 +1025,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2921399530694449829}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 1
@@ -1126,6 +1126,7 @@ MonoBehaviour:
   moveToLocations: []
   isFollowing: 0
   waiting: 0
+  preyAnimals: []
 --- !u!114 &2922441758686748213
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1871,6 +1872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transparentMat: {fileID: 2100000, guid: 51d7896e92561434486f4ab6803e93b7, type: 2}
+  originalMat: []
+  transparentMatList: []
 --- !u!1 &2921628408385518525
 GameObject:
   m_ObjectHideFlags: 0

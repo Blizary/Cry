@@ -6,13 +6,22 @@ public class TransparentMat : MonoBehaviour
 {
     public Material transparentMat;
 
-    private Material originalMat;
+    public List<Material> originalMat;
+    public List<Material> transparentMatList;
     private PlayerControls wireframeHold;
     private bool lastMode;
+    private int materialsNum;
     // Start is called before the first frame update
     void Start()
     {
-        originalMat = GetComponent<Renderer>().material;
+        originalMat = new List<Material>();
+        materialsNum = GetComponent<Renderer>().materials.Length;
+
+        for (int i = 0; i < materialsNum; i++)
+        {
+            originalMat.Add(GetComponent<Renderer>().materials[i]);
+            transparentMatList.Add(transparentMat);
+        }
         wireframeHold = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControls>();
 
     }
@@ -25,11 +34,13 @@ public class TransparentMat : MonoBehaviour
             //wireframe active
             if(wireframeHold.wireframeVision)
             {
-                GetComponent<Renderer>().material = transparentMat;
+                GetComponent<Renderer>().materials = transparentMatList.ToArray();
+
             }
             else
             {
-                GetComponent<Renderer>().material = originalMat;
+                GetComponent<Renderer>().materials= originalMat.ToArray();
+
             }
             lastMode = wireframeHold.wireframeVision;
         }
