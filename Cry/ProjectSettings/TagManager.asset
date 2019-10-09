@@ -14,7 +14,6 @@ TagManager:
   - Food
   - WorldManager
   - Spawner
-  - BerryBush
   layers:
   - Default
   - TransparentFX

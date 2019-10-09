@@ -77,6 +77,7 @@ public class AnimalBase : MonoBehaviour
 
     public void SetVariables()
     {
+        GetComponent<NavMeshAgent>().enabled = true;
         spawnLocation = this.transform.position;
         navAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
